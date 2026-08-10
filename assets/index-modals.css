@@ -1,0 +1,15 @@
+/* Rules previously declared inline by the payment confirmation modal. */
+#confirmPayModal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#confirmPayModal .modal-content {
+    max-width: 400px;
+    text-align: center;
+}
+
+#confirmPayModal .confirm-pay-actions {
+    margin-top: 15px;
+}

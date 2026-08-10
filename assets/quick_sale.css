@@ -1,0 +1,1093 @@
+```css
+/*==================================================
+    QUICK SALE V5
+    PART 1 - LAYOUT
+==================================================*/
+
+:root{
+
+    --qs-blue:#2563eb;
+    --qs-green:#16a34a;
+    --qs-red:#ef4444;
+
+    --qs-bg:#f8fafc;
+    --qs-border:#e5e7eb;
+    --qs-text:#111827;
+    --qs-sub:#6b7280;
+
+}
+
+/*==========================
+MODAL
+==========================*/
+
+.sale-pro-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.45);
+
+    backdrop-filter:blur(6px);
+
+    z-index:99999;
+
+}
+
+.sale-pro-modal.show{
+
+    display:flex;
+
+}
+
+/*==========================
+WRAPPER
+==========================*/
+
+.sale-pro-wrapper{
+
+    width:min(1380px,96vw);
+
+    height:min(92vh,920px);
+
+    display:grid;
+
+    grid-template-columns:340px 1fr;
+
+    gap:20px;
+
+}
+
+/*==========================
+LEFT
+==========================*/
+
+.sale-history{
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.12);
+
+}
+
+/*==========================
+SUMMARY
+==========================*/
+
+#quickSummary{
+
+    background:#fff;
+
+    padding:18px;
+
+    border-bottom:1px solid var(--qs-border);
+
+}
+
+/*==========================
+DETAIL
+==========================*/
+
+.sale-history-detail{
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    overflow:hidden;
+
+}
+
+/*==========================
+TITLE
+==========================*/
+
+.sale-history-title{
+
+    padding:16px 18px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    border-bottom:1px solid var(--qs-border);
+
+}
+
+/*==========================
+HISTORY
+==========================*/
+
+.quick-history{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:14px;
+
+    background:var(--qs-bg);
+
+}
+
+/*==========================
+RIGHT
+==========================*/
+
+.sale-pro-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.12);
+
+}
+
+/*==========================
+HEADER
+==========================*/
+
+.sale-pro-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 24px;
+
+    border-bottom:1px solid var(--qs-border);
+
+}
+
+.sale-pro-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--qs-text);
+
+}
+
+.sale-pro-close{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f3f4f6;
+
+    cursor:pointer;
+
+    font-size:24px;
+
+}
+
+.sale-pro-close:hover{
+
+    background:var(--qs-red);
+
+    color:#fff;
+
+}
+
+/*==========================
+BODY
+==========================*/
+
+.sale-pro-body{
+
+    flex:1;
+
+    overflow:auto;
+
+    padding:24px;
+
+    background:var(--qs-bg);
+
+}
+
+/*==========================
+ANIMATION
+==========================*/
+
+@keyframes qsFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+```css
+/*==================================================
+    QUICK SALE V5
+    PART 2 - FORM
+==================================================*/
+
+/*==========================
+GRID
+==========================*/
+
+.sale-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:18px;
+
+}
+
+/*==========================
+GROUP
+==========================*/
+
+.sale-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.sale-group label{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#374151;
+
+    margin-bottom:8px;
+
+}
+
+/*==========================
+INPUT
+==========================*/
+
+.sale-group input,
+.sale-group select{
+
+    width:100%;
+
+    height:52px;
+
+    padding:0 16px;
+
+    border:1px solid var(--qs-border);
+
+    border-radius:14px;
+
+    background:#fff;
+
+    color:var(--qs-text);
+
+    font-size:16px;
+
+    transition:.2s;
+
+}
+
+.sale-group input::placeholder{
+
+    color:#9ca3af;
+
+}
+
+.sale-group input:hover,
+.sale-group select:hover{
+
+    border-color:#93c5fd;
+
+}
+
+.sale-group input:focus,
+.sale-group select:focus{
+
+    outline:none;
+
+    border-color:var(--qs-blue);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/*==========================
+SEARCH
+==========================*/
+
+.employee-search{
+
+    position:relative;
+
+}
+
+.employee-result{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    top:calc(100% + 8px);
+
+    display:none;
+
+    max-height:260px;
+
+    overflow-y:auto;
+
+    background:#fff;
+
+    border-radius:16px;
+
+    border:1px solid var(--qs-border);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    z-index:999;
+
+}
+
+.employee-item{
+
+    padding:13px 16px;
+
+    cursor:pointer;
+
+    transition:.15s;
+
+}
+
+.employee-item:hover{
+
+    background:#eff6ff;
+
+}
+
+.employee-item.active{
+
+    background:var(--qs-blue);
+
+    color:#fff;
+
+}
+
+/*==========================
+FOOTER
+==========================*/
+
+.sale-footer{
+
+    position:sticky;
+
+    bottom:0;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    padding:18px 24px;
+
+    background:#fff;
+
+    border-top:1px solid var(--qs-border);
+
+}
+
+/*==========================
+BUTTON
+==========================*/
+
+.sale-btn{
+
+    min-width:140px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.18s;
+
+}
+
+.sale-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.sale-btn-save{
+
+    background:var(--qs-blue);
+
+    color:#fff;
+
+}
+
+.sale-btn-next{
+
+    background:var(--qs-green);
+
+    color:#fff;
+
+}
+
+.sale-btn-cancel{
+
+    background:#e5e7eb;
+
+    color:#374151;
+
+}
+
+.sale-btn-cancel:hover{
+
+    background:#d1d5db;
+
+}
+```css
+/*==================================================
+    QUICK SALE V5
+    PART 3 - SUMMARY + HISTORY
+==================================================*/
+
+/*==========================
+SUMMARY CARD
+==========================*/
+
+.summary-card{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    border-radius:18px;
+
+    padding:18px;
+
+    color:#fff;
+
+    box-shadow:
+        0 12px 28px rgba(37,99,235,.28);
+
+}
+
+.summary-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+.summary-big{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    line-height:1.15;
+
+}
+
+.summary-money{
+
+    margin-top:10px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    opacity:.95;
+
+}
+
+.summary-small{
+
+    margin-top:14px;
+
+    font-size:14px;
+
+    opacity:.9;
+
+}
+
+.summary-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:20px;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.2s;
+
+}
+
+.summary-btn:hover{
+
+    background:rgba(255,255,255,.28);
+
+}
+
+/*==========================
+LEADERBOARD
+==========================*/
+
+#leaderBoard{
+
+    margin:16px;
+
+}
+
+.leader-title{
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:12px;
+
+}
+
+.leader-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    padding:12px 14px;
+
+    background:#fff;
+
+    border:1px solid var(--qs-border);
+
+    border-radius:12px;
+
+    box-shadow:
+
+        0 2px 8px rgba(0,0,0,.05);
+
+}
+
+.leader-row span{
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+.leader-row b{
+
+    color:var(--qs-blue);
+
+}
+
+/*==========================
+HISTORY ITEM
+==========================*/
+
+.quick-history-item{
+
+    background:#fff;
+
+    border-radius:14px;
+
+    border-left:5px solid var(--qs-blue);
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    box-shadow:
+
+        0 4px 12px rgba(0,0,0,.06);
+
+    animation:historyFade .25s;
+
+}
+
+.qh-name{
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.qh-product{
+
+    color:#6b7280;
+
+    margin-bottom:10px;
+
+}
+
+.qh-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:14px;
+
+    color:#374151;
+
+    margin-bottom:8px;
+
+}
+
+.qh-time{
+
+    text-align:right;
+
+    color:#9ca3af;
+
+    font-size:12px;
+
+}
+
+/*==========================
+EMPTY
+==========================*/
+
+.summary-empty,
+
+.empty-history{
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    font-style:italic;
+
+}
+
+/*==========================
+SCROLLBAR
+==========================*/
+
+.quick-history::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+.quick-history::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:20px;
+
+}
+
+/*==========================
+ANIMATION
+==========================*/
+
+@keyframes historyFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+```css
+/*==================================================
+    QUICK SALE V5
+    PART 4 - MOBILE + RESPONSIVE
+==================================================*/
+
+@media (max-width:900px){
+
+/*==========================
+MODAL
+==========================*/
+
+.sale-pro-modal{
+
+    align-items:flex-end;
+
+}
+
+.sale-pro-wrapper{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0;
+
+}
+
+/*==========================
+LEFT PANEL
+==========================*/
+
+.sale-history{
+
+    order:1;
+
+    width:100%;
+
+    border-radius:0;
+
+    box-shadow:none;
+
+}
+
+/*==========================
+SUMMARY
+==========================*/
+
+#quickSummary{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:50;
+
+    background:#fff;
+
+    padding:14px;
+
+    border-bottom:1px solid var(--qs-border);
+
+}
+
+/*==========================
+DETAIL
+==========================*/
+
+.sale-history-detail{
+
+    display:none;
+
+    background:#fff;
+
+    border-top:1px solid var(--qs-border);
+
+}
+
+.sale-history-detail.show{
+
+    display:block;
+
+    animation:qsFade .25s;
+
+}
+
+.quick-history{
+
+    max-height:240px;
+
+}
+
+/*==========================
+RIGHT PANEL
+==========================*/
+
+.sale-pro-card{
+
+    order:2;
+
+    flex:1;
+
+    width:100%;
+
+    border-radius:20px 20px 0 0;
+
+    box-shadow:none;
+
+}
+
+/*==========================
+HEADER
+==========================*/
+
+.sale-pro-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:20;
+
+    background:#fff;
+
+}
+
+/*==========================
+BODY
+==========================*/
+
+.sale-pro-body{
+
+    padding:16px;
+
+}
+
+/*==========================
+FORM
+==========================*/
+
+.sale-grid{
+
+    grid-template-columns:1fr;
+
+    gap:14px;
+
+}
+
+.sale-group{
+
+    width:100%;
+
+}
+
+.sale-group input,
+
+.sale-group select{
+
+    height:54px;
+
+    font-size:16px;      /* chống zoom */
+
+}
+
+/*==========================
+FOOTER
+==========================*/
+
+.sale-footer{
+
+    position:sticky;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    background:#fff;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    padding:14px;
+
+}
+
+.sale-btn{
+
+    width:100%;
+
+    min-width:unset;
+
+}
+
+.sale-btn-cancel{
+
+    grid-column:1/3;
+
+}
+
+/*==========================
+SUMMARY
+==========================*/
+
+.summary-card{
+
+    padding:14px;
+
+}
+
+.summary-big{
+
+    font-size:22px;
+
+}
+
+.summary-money{
+
+    font-size:17px;
+
+}
+
+.summary-small{
+
+    font-size:13px;
+
+}
+
+}
+
+/*==========================
+PHONE < 420
+==========================*/
+
+@media (max-width:420px){
+
+.sale-pro-title{
+
+    font-size:18px;
+
+}
+
+.sale-group label{
+
+    font-size:13px;
+
+}
+
+.summary-big{
+
+    font-size:20px;
+
+}
+
+.summary-money{
+
+    font-size:15px;
+
+}
+
+.sale-btn{
+
+    height:46px;
+
+    font-size:14px;
+
+}
+
+}
+
+/*==========================
+LANDSCAPE
+==========================*/
+
+@media (max-height:700px){
+
+.sale-pro-wrapper{
+
+    height:100vh;
+
+}
+
+.quick-history{
+
+    max-height:160px;
+
+}
+
+}
+
+/*==================================================
+    END QUICK SALE V5
+==================================================*/

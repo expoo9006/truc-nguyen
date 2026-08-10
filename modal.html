@@ -1,0 +1,488 @@
+<!--==================================================
+    QUICK SALE 
+===================================================-->
+
+
+<div id="quickSaleModal" class="qs-modal">
+
+    <div class="qs-window">
+
+       <div class="qs-header">
+
+				    <div class="qs-title">
+				
+				        <div
+    class="qs-trip-header"
+    id="qsTripHeader">
+
+    <div
+        class="trip-header-main"
+        id="btnTripToggle">
+
+        <div>
+
+            <div
+                id="qsTripNo"
+                class="trip-no">
+
+                🚚 Chưa có chuyến
+
+            </div>
+
+            <div
+                id="qsTripCustomer"
+                class="trip-customer">
+
+                👤 Chưa có khách
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div
+                class="trip-status">
+
+                🟢 Đang mở
+
+            </div>
+
+            <div
+                class="trip-arrow">
+
+                ▼
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+				
+				    </div>
+				
+				    <button
+				        type="button"
+				        id="qsClose"
+				        class="qs-close">
+				
+				        ✕
+				
+				    </button>
+	
+	</div>
+	<div class="qs-tabs">
+
+    <button
+        type="button"
+        class="qs-tab active"
+        data-tab="sale">
+
+        📝 Đơn hàng
+
+    </button>
+
+    <button
+        type="button"
+        class="qs-tab"
+        data-tab="trip">
+
+        🚚 Chuyến
+
+    </button>
+
+</div>
+		
+        <!--==============================
+            BODY
+        ==============================-->
+
+        <div class="qs-body">
+
+            <form id="quickSaleForm">     
+				
+				<!-- CARD -->
+               <div class="qs-form-card">
+						<div
+    id="panelTrip"
+    class="qs-panel"
+    style="display:none">
+					    <!--==================================
+					        THÔNG TIN CHUYẾN
+					    ===================================-->
+					
+					    <div class="qs-trip-box" id="qsTripBox">
+					
+					        <div class="trip-top">
+					
+					            <div
+					                class="trip-no"
+					                id="qsTripNo">
+					
+					                🚚 Chưa có chuyến
+					
+					            </div>
+					
+					            <div class="trip-status">
+					
+					                🟢 Đang mở
+					
+					            </div>
+					
+					        </div>
+					
+					        <div
+					            class="trip-code"
+					            id="qsTripCode">
+					
+					            🧾 Chưa có đơn hàng
+					
+					        </div>
+					
+					        <div
+					            class="trip-customer"
+					            id="qsTripCustomer">
+					
+					            👤 Chưa có khách hàng
+					
+					        </div>
+					
+					        <div
+					            class="trip-date"
+					            id="qsTripDate">
+					
+					            📅 --
+					
+					        </div>					
+					
+					        <div
+					            id="qsTripDetail"
+					            class="trip-detail">
+					
+					        </div>
+					
+					        <div class="trip-actions">
+					
+					            <button
+					                type="button"
+					                class="button btn-trip"
+					                id="btnNewTrip">
+					
+					                ➕ Tạo chuyến mới
+					
+					            </button>
+					
+					            
+					            <button
+					                type="button"
+					                class="button btn-trip-finish"
+					                id="btnFinishTrip">
+					
+					                ✔ Kết thúc chuyến
+					
+					            </button>
+					            
+					
+					        </div>
+					
+					    </div>
+							<!--==============================
+							LỊCH SỬ CHUYẾN
+							===============================-->
+							
+							<div class="qs-trip-history">
+
+							    <div class="trip-history-title">
+							
+							        📋 LỊCH SỬ CHUYẾN
+							
+							    </div>
+							
+							    <div class="history-search-box">
+
+									    <input
+									        type="text"
+									        id="historyKeyword"
+									        placeholder="🔎 Nhập khách hàng • Mã đơn • Số chuyến"
+									        autocomplete="off">
+									
+									    <div
+									        id="historySuggest"
+									        class="employee-result">
+									    </div>
+									
+									</div>
+							
+							    <div
+							        id="qsTripHistory"
+							        class="trip-history-list">
+							
+							        Chưa có dữ liệu
+							
+							    </div>
+							
+							</div>
+						</div>
+					 <!-- KHÁCH -->
+				<div
+					id="panelSale"
+					class="qs-panel active">
+                    <input
+                        type="hidden"
+                        id="quickEmployeeId"
+                        name="employee_id">
+                   
+					
+                    <div class="qs-group">
+
+                        <label>
+
+                            👤 Khách hàng
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="customer_name"
+                            placeholder="Tên khách hàng...">
+
+                    </div>					
+                    <!-- NGÀY -->
+
+                    <div class="qs-group">
+
+                        <label>
+
+                            📅 Ngày
+
+                        </label>
+
+                        <input
+                            type="date"
+                            name="sale_date"
+                            value="<?=date('Y-m-d')?>">
+
+                    </div>
+					
+					 <!-- NHÂN VIÊN -->
+
+                    <div class="qs-group employee-search">
+
+                        <label>
+
+                            👤 Nhân viên
+
+                        </label>
+
+                        <input
+                            id="quickEmployee"
+                            type="text"
+                            autocomplete="off"
+                            placeholder="Nhập tên nhân viên...">
+
+                        <div
+                            id="employeeResult"
+                            class="employee-result">
+
+                        </div>
+
+                    </div>
+                    <!-- SẢN PHẨM -->
+
+                    <div class="qs-group">
+
+                        <label>
+
+                            📦 Sản phẩm
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="product_name"
+                            value="Đá viên">
+
+                    </div>
+
+                    <!-- SỐ LƯỢNG -->
+
+                    <div class="qs-group">
+
+                        <label>
+
+                            🔢 Số lượng
+
+                        </label>
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1">
+
+                    </div>
+
+                    <!-- GIÁ KHÁCH -->
+
+						<div class="qs-group">
+						
+						    <label>💰 Giá khách</label>
+						
+						    <input
+						        type="number"
+						        name="customer_price"
+						        value="2500">
+						
+						</div>
+						
+						<!-- CÔNG TY GIỮ -->
+						
+						<div class="qs-group">
+						
+						    <label>🏢 Công ty giữ</label>
+						
+						    <input
+						        type="number"
+						        name="company_fee"
+						        value="100">
+						
+						</div>
+						
+						<!-- CÔNG BỐC -->
+						
+						<div class="qs-group">
+						
+						    <label>👷 Công bốc</label>
+						
+						    <input
+						        type="number"
+						        name="loading_price"
+						        value="300">
+						
+						</div>
+						
+						<!-- NHÂN VIÊN NHẬN -->
+						
+						<div class="qs-group">
+						
+						    <label>👤 Nhân viên nhận</label>
+						
+						    <input
+						        type="number"
+						        name="employee_price"
+						        readonly>
+						
+						</div>
+
+                   <!-- THANH TOÁN -->
+
+                    <div class="qs-group">
+
+                        <label>
+
+                            💳 Thanh toán
+
+                        </label>
+
+                        <select name="paid">
+
+                            <option value="0">
+
+                                Chưa thanh toán
+
+                            </option>
+
+                            <option value="1">
+
+                                Đã thanh toán
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>               
+			</div>	
+            </form>
+
+        </div>
+					<!--==================================
+					    FOOTER SUMMARY
+					===================================-->
+					
+					<div class="qs-footer">
+					
+					    <div class="qs-footer-card">
+					
+					        <div class="qs-footer-item">
+					
+					            <div
+					                id="qsSideQty"
+					                class="qs-footer-number">
+					
+					                0
+					
+					            </div>
+					
+					            <div class="qs-footer-label">
+					
+					                📦 Viên
+					
+					            </div>
+					
+					        </div>
+					
+					        <div class="qs-footer-item">
+					
+					            <div
+					                id="qsSideMoney"
+					                class="qs-footer-number">
+					
+					                0
+					
+					            </div>
+					
+					            <div class="qs-footer-label">
+					
+					                💰 VNĐ
+					
+					            </div>
+					
+					        </div>
+					
+					        <div class="qs-footer-item">
+					
+					            <div
+					                id="qsSideInvoice"
+					                class="qs-footer-number">
+					
+					                0
+					
+					            </div>
+					
+					            <div class="qs-footer-label">
+					
+					                🧾 Phiếu
+					
+					            </div>
+					
+					        </div>
+					
+					    </div>
+					
+					    <button
+					        type="button"
+					        id="qsSave"
+					        class="qs-save">
+					
+					        💾 LƯU & TIẾP
+					
+					    </button>
+					
+					</div>
+    </div>
+
+</div>

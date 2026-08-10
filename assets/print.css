@@ -1,0 +1,498 @@
+body{
+
+    margin:0;
+
+    background:#eee;
+
+    font-family:Arial,sans-serif;
+
+}
+
+.print-sheet{
+
+    width:210mm;
+
+    min-height:297mm;
+
+    margin:20px auto;
+
+    background:#fff;
+
+    padding:15mm;
+
+    box-sizing:border-box;
+
+}
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.header h1{
+
+    margin:0;
+
+    font-size:30px;
+
+    color:#0f766e;
+
+}
+
+.header h2{
+
+    margin-top:6px;
+
+    font-size:18px;
+
+}
+
+.info{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+    margin-bottom:20px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th,td{
+
+    border:1px solid #999;
+
+    padding:8px;
+
+}
+
+.right{
+
+    text-align:right;
+
+}
+
+.summary{
+
+    margin-top:20px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+.sign{
+
+    margin-top:60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+@media print{
+
+    body{
+
+        background:#fff;
+
+    }
+
+    .print-sheet{
+
+        margin:0;
+
+        width:auto;
+
+        min-height:auto;
+
+        box-shadow:none;
+
+    }
+
+}
+/*==============================
+PRINT TABS
+==============================*/
+
+.print-wrapper{
+
+    width:210mm;
+
+    margin:20px auto;
+
+    background:#fff;
+
+    padding:15mm;
+
+    box-sizing:border-box;
+
+}
+
+.print-tabs{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.print-tabs .tab{
+
+    flex:1;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#f3f4f6;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+.print-block-title{
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+    border-bottom:1px dashed #888;
+
+    padding-bottom:4px;
+
+}
+.worker-no{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:20px;
+
+    height:20px;
+
+    margin-right:8px;
+
+    border:1px solid #444;
+
+    border-radius:50%;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+.print-tabs .tab:hover{
+
+    background:#e5e7eb;
+
+}
+
+.print-tabs .tab.active{
+
+    background:#0f766e;
+
+    color:#fff;
+
+}
+
+.print-toolbar{
+
+    margin-top:20px;
+
+    text-align:right;
+
+}
+
+.print-toolbar button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#0f766e;
+
+    color:#fff;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+}
+
+@media print{
+
+    .print-tabs,
+
+    .print-toolbar{
+
+        display:none;
+
+    }
+
+}
+.company{
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:900;
+
+    color:#0f766e;
+
+    letter-spacing:2px;
+
+}
+
+.company-sub{
+
+    text-align:center;
+
+    margin-top:4px;
+
+    color:#6b7280;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+}
+
+.title{
+
+    text-align:center;
+
+    margin:18px 0;
+
+    font-size:24px;
+
+    font-weight:800;
+
+}
+
+.print-info{
+
+    border:2px solid #222;
+
+    border-radius:10px;
+
+    padding:14px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+}
+
+.print-total{
+
+    margin-top:18px;
+
+    border:2px dashed #0f766e;
+
+    border-radius:10px;
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+.print-total-title{
+
+    font-size:15px;
+
+    color:#666;
+
+}
+
+.print-total-money{
+
+    font-size:34px;
+
+    font-weight:900;
+
+    color:#e11d48;
+
+    margin-top:8px;
+
+}
+
+.print-sign{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    text-align:center;
+
+}
+
+.print-sign>div{
+
+    width:42%;
+
+}
+
+.qr-box{
+
+    margin:25px auto;
+
+    width:170px;
+
+    height:170px;
+
+    border:2px dashed #999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:10px;
+
+    color:#888;
+
+}
+.print-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+.print-table th{
+
+    background:#0f766e;
+
+    color:#fff;
+
+    padding:10px;
+
+}
+
+.print-table td{
+
+    padding:10px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.print-table tfoot th{
+
+    background:#f3f4f6;
+
+    color:#000;
+
+    font-size:18px;
+
+}
+
+.right{
+
+    text-align:right;
+
+}
+.admin-summary{
+
+    display:flex;
+
+    gap:15px;
+
+    margin:25px 0;
+
+}
+
+.admin-card{
+
+    flex:1;
+
+    border-radius:12px;
+
+    border:2px solid #ddd;
+
+    padding:16px;
+
+    text-align:center;
+
+}
+
+.admin-label{
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+.admin-value{
+
+    margin-top:10px;
+
+    font-size:28px;
+
+    font-weight:800;
+
+}
+
+.admin-card.profit{
+
+    border-color:#16a34a;
+
+    background:#f0fdf4;
+
+}
+
+.admin-percent{
+
+    margin-top:8px;
+
+    color:#16a34a;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
