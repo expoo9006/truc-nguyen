@@ -319,7 +319,19 @@ $debts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if($user_role === 'admin'){
 
-    $employees = getAllEmployees();
+    // Admin chỉ xem nhân viên được cấp quyền khai thác ở bãi/kỳ đang chọn.
+    $stmt = $pdo->prepare("
+        SELECT e.*
+        FROM employees e
+        INNER JOIN employee_batches eb
+            ON eb.employee_id = e.id
+        WHERE eb.batch_id = ?
+        ORDER BY e.name
+    ");
+
+    $stmt->execute([$currentBatch]);
+
+    $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 }else{
 
