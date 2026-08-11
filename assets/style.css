@@ -3404,6 +3404,330 @@ textarea{
 
     margin-bottom:15px;
 }
+
+/* =========================
+   ADMIN MOBILE DASHBOARD
+   Uses existing dashboard data and controls; visual-only.
+========================= */
+.admin-quick-actions{
+    margin:32px 0 24px;
+}
+
+.admin-quick-actions-heading{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:14px;
+}
+
+.admin-quick-actions-heading h1{
+    margin:0;
+    color:#1e293b;
+    font-size:1.55rem;
+}
+
+.admin-quick-actions-heading span{
+    color:#64748b;
+    font-size:.9rem;
+}
+
+.admin-primary-action{
+    width:100%;
+    min-height:58px;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#dc2626,#ef4444);
+    color:#fff;
+    font-size:1.05rem;
+    font-weight:800;
+    box-shadow:0 10px 22px rgba(220,38,38,.22);
+}
+
+.admin-action-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:12px;
+}
+
+.admin-action-button{
+    min-height:92px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    background:#fff;
+    color:#334155;
+    font-weight:700;
+    box-shadow:0 6px 18px rgba(15,23,42,.06);
+}
+
+.admin-action-button:hover{
+    transform:translateY(-2px);
+    border-color:#93c5fd;
+}
+
+.admin-action-icon{
+    font-size:1.45rem;
+    line-height:1;
+}
+
+.debt-card-action{
+    display:none;
+}
+
+@media (max-width:768px){
+    .admin-mobile-header{
+        gap:14px;
+        padding:18px 16px;
+        margin-bottom:14px;
+        border-radius:0 0 22px 22px;
+    }
+
+    .admin-mobile-header .welcome-left{
+        gap:10px;
+    }
+
+    .admin-mobile-header .welcome-avatar{
+        width:46px;
+        height:46px;
+        border-radius:14px;
+        font-size:1.15rem;
+    }
+
+    .admin-mobile-header .welcome-text{
+        font-size:.85rem;
+    }
+
+    .admin-mobile-header .welcome-name{
+        margin-top:0;
+        font-size:1.12rem;
+    }
+
+    .admin-mobile-header .welcome-role{
+        padding:4px 8px;
+        font-size:.62rem;
+    }
+
+    .admin-dashboard-mobile .quick-stats{
+        margin-top:0;
+    }
+
+    .admin-dashboard-mobile .stats-title{
+        margin-bottom:14px;
+        font-size:1.3rem;
+    }
+
+    .admin-dashboard-mobile .stats-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .admin-dashboard-mobile .stat-card{
+        min-height:0;
+        padding:14px 10px;
+        gap:5px;
+        border-radius:18px;
+        box-shadow:0 6px 16px rgba(15,23,42,.12);
+    }
+
+    .admin-dashboard-mobile .stat-card-mobile-secondary{
+        display:none;
+    }
+
+    .admin-dashboard-mobile .stat-icon{
+        width:36px;
+        height:36px;
+        margin:0;
+        border-radius:12px;
+    }
+
+    .admin-dashboard-mobile .stat-icon svg{
+        width:19px;
+        height:19px;
+    }
+
+    .admin-dashboard-mobile .stat-label{
+        margin:2px 0 0;
+        font-size:.78rem;
+        line-height:1.2;
+    }
+
+    .admin-dashboard-mobile .stat-value{
+        font-size:1.05rem;
+        line-height:1.15;
+    }
+
+    .admin-dashboard-mobile .stat-sub{
+        display:none;
+    }
+
+    .admin-quick-actions{
+        margin:24px 0;
+    }
+
+    .admin-quick-actions-heading h1{
+        font-size:1.3rem;
+    }
+
+    .admin-quick-actions-heading span{
+        font-size:.78rem;
+    }
+
+    .admin-primary-action{
+        min-height:56px;
+        margin-bottom:12px;
+    }
+
+    .admin-action-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .admin-action-button{
+        min-height:82px;
+        padding:10px;
+        border-radius:14px;
+        font-size:.82rem;
+    }
+
+    .debt-section{
+        margin-top:24px;
+    }
+
+    .debt-section .section-title-wrap{
+        gap:10px;
+        margin-bottom:14px;
+    }
+
+    .debt-section .section-subtitle{
+        font-size:.82rem;
+        line-height:1.35;
+    }
+
+    .debt-card-list{
+        overflow:visible;
+    }
+
+    .debt-card-list .modern-debt-table,
+    .debt-card-list .modern-debt-table tbody,
+    .debt-card-list .modern-debt-table tr,
+    .debt-card-list .modern-debt-table td{
+        display:block;
+        width:100%;
+    }
+
+    .debt-card-list .modern-debt-table{
+        border-spacing:0;
+    }
+
+    .debt-card-list .modern-debt-table thead{
+        display:none;
+    }
+
+    .debt-card-list .modern-debt-table .debt-row{
+        display:grid;
+        grid-template-columns:minmax(0,1fr) auto;
+        gap:10px 12px;
+        margin-bottom:12px;
+        padding:16px;
+        border:1px solid #e2e8f0;
+        border-radius:18px;
+        box-shadow:0 6px 16px rgba(15,23,42,.06);
+    }
+
+    .debt-card-list .modern-debt-table td{
+        min-width:0;
+        padding:0;
+        border:0;
+        background:transparent;
+    }
+
+    .debt-card-list .modern-debt-table td:first-child,
+    .debt-card-list .modern-debt-table td:last-child{
+        border:0;
+        border-radius:0;
+    }
+
+    .debt-card-customer{
+        grid-column:1 / -1;
+        grid-row:1;
+    }
+
+    .debt-card-order{
+        grid-column:2;
+        grid-row:1;
+        align-self:start;
+        width:auto !important;
+    }
+
+    .debt-card-order .order-badge{
+        white-space:nowrap;
+        font-size:.75rem;
+    }
+
+    .debt-card-quantity,
+    .debt-card-employee{
+        display:flex !important;
+        flex-direction:column;
+        gap:4px;
+    }
+
+    .debt-card-quantity::before,
+    .debt-card-employee::before{
+        color:#64748b;
+        font-size:.72rem;
+        font-weight:700;
+    }
+
+    .debt-card-quantity::before{
+        content:"Số lượng nợ";
+    }
+
+    .debt-card-employee::before{
+        content:"Nhân viên phụ trách";
+    }
+
+    .debt-card-list .qty-badge-modern,
+    .debt-card-list .employee-badge{
+        width:fit-content;
+        min-width:0;
+        padding:7px 10px;
+        font-size:.8rem;
+    }
+
+    .debt-card-value{
+        grid-column:1 / -1;
+        display:flex !important;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        padding-top:12px !important;
+        border-top:1px solid #edf2f7 !important;
+    }
+
+    .debt-card-list .money-badge-modern,
+    .debt-card-list .empty-badge{
+        min-width:0;
+        padding:8px 10px;
+        font-size:.88rem;
+    }
+
+    .debt-card-action{
+        display:inline;
+        color:#2563eb;
+        font-size:.82rem;
+        font-weight:800;
+        white-space:nowrap;
+    }
+}
 .debts-table th{
 
     font-weight:700;

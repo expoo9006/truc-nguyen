@@ -565,7 +565,7 @@ $deliveryOrders = $pdo->query("
 </head>
 <body>
 <header>
-<div class="welcome-box">
+<div class="welcome-box admin-mobile-header">
 
     <div class="welcome-left">
 
@@ -647,7 +647,7 @@ if(batchSelect){
 </script>
 <div class="container">
 
-<div class="dashboard">
+<div class="dashboard admin-dashboard-mobile">
 
 <div class="quick-stats">
 
@@ -769,7 +769,7 @@ if(batchSelect){
         </div>
 
         <!-- Tổng tiền xe cuốc -->
-        <div class="stat-card stat-rent"
+        <div class="stat-card stat-rent stat-card-mobile-secondary"
              title="Tổng tiền xe cuốc"
              data-value="<?= $total_rent ?>"
              data-format="money">
@@ -806,7 +806,7 @@ if(batchSelect){
         </div>
 
         <!-- Chi phí / sản phẩm -->
-        <div class="stat-card stat-rent-unit"
+        <div class="stat-card stat-rent-unit stat-card-mobile-secondary"
              title="Chi phí cuốc mỗi sản phẩm"
              data-value="<?= $totalProducts > 0 ? $total_rent / $totalProducts : 0 ?>"
              data-format="money">
@@ -843,7 +843,7 @@ if(batchSelect){
         </div>
 
         <!-- Khách hàng -->
-        <div class="stat-card stat-customers"
+        <div class="stat-card stat-customers stat-card-mobile-secondary"
              title="Danh sách khách hàng">
 
             <div class="stat-top">
@@ -980,7 +980,7 @@ $stmtRent->fetchColumn() ?? 0;
     <?php if(count($debts) > 0): ?>
 
     <!-- TABLE -->
-    <div class="table-modern-wrap">
+    <div class="table-modern-wrap debt-card-list">
 
         <table class="debts-table modern-debt-table">
 
@@ -1001,7 +1001,7 @@ $stmtRent->fetchColumn() ?? 0;
 			    data-order="<?= htmlspecialchars($d['order_code']) ?>"
 			    data-customer="<?= htmlspecialchars($d['customer_name']) ?>">
 				  <!-- MÃ ĐƠN -->
-			    <td>
+			    <td class="debt-card-order">
 			
 			       <div class="order-badge">
 					    <?= htmlspecialchars($d['order_code']) ?>
@@ -1009,7 +1009,7 @@ $stmtRent->fetchColumn() ?? 0;
 			
 			    </td>
                 <!-- KHÁCH -->
-                <td>
+                <td class="debt-card-customer">
 
                     <div class="customer-box">
 				<!--
@@ -1034,7 +1034,7 @@ $stmtRent->fetchColumn() ?? 0;
                 </td>
 
                 <!-- SỐ LƯỢNG -->
-                <td>
+                <td class="debt-card-quantity">
 
                     <?php if($d['total_quantity'] > 0): ?>
 
@@ -1053,7 +1053,7 @@ $stmtRent->fetchColumn() ?? 0;
                 </td>
 
                 <!-- NHÂN VIÊN -->
-                <td>
+                <td class="debt-card-employee">
 
                     <div class="employee-badge">
                         <?= htmlspecialchars($d['employees']) ?>
@@ -1062,7 +1062,7 @@ $stmtRent->fetchColumn() ?? 0;
                 </td>
 
                 <!-- GIÁ TRỊ -->
-                <td>
+                <td class="debt-card-value">
 
                     <?php if($d['total_value'] > 0): ?>
 
@@ -1077,6 +1077,8 @@ $stmtRent->fetchColumn() ?? 0;
                         </div>
 
                     <?php endif; ?>
+
+                    <span class="debt-card-action">Xem chi tiết →</span>
 
                 </td>
 
@@ -1298,47 +1300,50 @@ document.querySelectorAll(".my-statement tbody tr").forEach(tr=>{
 </script>
 <?php endif; ?>
 <?php if($user_role==='admin'): ?>	
-<h1>Danh sách nhân viên</h1>
-<div style="
-    margin-bottom:15px;
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-">
+<section class="admin-quick-actions" aria-labelledby="adminQuickActionsTitle">
+<div class="admin-quick-actions-heading">
+    <h1 id="adminQuickActionsTitle">Quản lý nhanh</h1>
+    <span>Thao tác dùng nhiều</span>
+</div>
 
-    <button class="button addEmpBtn">
-        + Thêm nhân viên
+<button
+    class="button btn-add-sale-pro admin-primary-action"
+    id="btnQuickSale">
+    <span>➕</span>
+    <span>Tạo chuyến mới</span>
+</button>
+
+<div class="admin-action-grid">
+
+    <button class="button addEmpBtn admin-action-button">
+        <span class="admin-action-icon">👥</span>
+        <span>Thêm nhân viên</span>
     </button>
 
     <button
-        class="button btn-open-rent-modal"
+        class="button btn-open-rent-modal admin-action-button"
         id="openRentModal"
     >
-        🚜 Nhập tiền xe cuốc
+        <span class="admin-action-icon">🚜</span>
+        <span>Nhập tiền xe cuốc</span>
     </button>
 
     <!-- NÚT TẠO KỲ MỚI -->
     <button
-        class="button btn-new-batch"
+        class="button btn-new-batch admin-action-button"
         id="btnCreateBatch"
     >
-        📦 Tạo kỳ dữ liệu mới
+        <span class="admin-action-icon">📦</span>
+        <span>Tạo kỳ mới</span>
     </button>
 	<button
-    class="button"
+    class="button admin-action-button"
     id="btnBatchPermission">
-    👥 Phân quyền vị trí
-</button>
-<button
-    class="button btn-add-sale-pro"
-    id="btnQuickSale">
-
-    <span>➕</span>
-
-    <span>Bán Hàng</span>
-
+    <span class="admin-action-icon">⚙️</span>
+    <span>Phân quyền</span>
 </button>
 </div>
+</section>
 <table class="debts-table">
 <thead>
 <tr>
