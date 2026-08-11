@@ -1345,7 +1345,7 @@ document.querySelectorAll(".my-statement tbody tr").forEach(tr=>{
 </button>
 </div>
 </section>
-<table class="debts-table">
+<table class="debts-table employee-summary-table">
 <thead>
 <tr>
     

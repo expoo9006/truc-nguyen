@@ -3539,6 +3539,14 @@ textarea{
     }
 
     .admin-dashboard-mobile .stat-card-mobile-secondary{
+        display:flex;
+    }
+
+    .admin-dashboard-mobile .stat-customers{
+        min-height:0;
+    }
+
+    .admin-dashboard-mobile .stat-customers .customer-list{
         display:none;
     }
 
@@ -3657,8 +3665,9 @@ textarea{
     }
 
     .debt-card-customer{
-        grid-column:1 / -1;
+        grid-column:1;
         grid-row:1;
+        min-width:0;
     }
 
     .debt-card-order{
@@ -4571,4 +4580,155 @@ textarea{
 
 #debtModal.show{
     display:flex;
+}
+
+/* Mobile dashboard final overrides: kept last to win over legacy table rules. */
+@media (max-width:768px){
+    .container{
+        padding:14px 12px 24px;
+        overflow-x:hidden;
+    }
+
+    .admin-mobile-header{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        align-items:center;
+        padding:14px 12px;
+    }
+
+    .admin-mobile-header .welcome-left{
+        flex:1;
+        min-width:0;
+    }
+
+    .admin-mobile-header .welcome-user-info{
+        min-width:0;
+    }
+
+    .admin-mobile-header .welcome-name-row{
+        flex-wrap:nowrap;
+    }
+
+    .admin-mobile-header .welcome-name{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+
+    .admin-mobile-header .logout-btn{
+        flex:0 0 42px;
+        width:42px;
+        min-width:42px;
+        height:42px;
+        padding:0;
+        justify-content:center;
+        border-radius:13px;
+    }
+
+    .admin-mobile-header .logout-btn span:last-child{
+        display:none;
+    }
+
+    .admin-mobile-header .logout-icon{
+        font-size:1.45rem;
+    }
+
+    .admin-mobile-header .batch-box{
+        width:100%;
+        flex-direction:row;
+        align-items:center;
+        gap:8px;
+        padding:8px 10px;
+        border-radius:12px;
+    }
+
+    .admin-mobile-header .batch-box label{
+        flex:0 0 auto;
+        font-size:.72rem;
+        white-space:nowrap;
+    }
+
+    .admin-mobile-header .batch-box select{
+        flex:1;
+        min-width:0;
+        width:auto;
+        padding:8px 28px 8px 10px;
+        font-size:.82rem;
+    }
+
+    .admin-mobile-header .batch-box::after{
+        top:50%;
+        right:18px;
+    }
+
+    .employee-summary-table,
+    .employee-summary-table tbody,
+    .employee-summary-table tr,
+    .employee-summary-table td{
+        display:block;
+        width:100%;
+    }
+
+    .employee-summary-table thead{
+        display:none;
+    }
+
+    .employee-summary-table .empRow{
+        margin:0 0 12px;
+        padding:14px;
+        border:1px solid #e2e8f0;
+        border-radius:18px;
+        background:#fff;
+        box-shadow:0 6px 16px rgba(15,23,42,.06);
+    }
+
+    .employee-summary-table td{
+        position:relative;
+        padding:10px 0;
+        border:0;
+        text-align:left;
+    }
+
+    .employee-summary-table td:first-child,
+    .employee-summary-table td:last-child{
+        border:0;
+        border-radius:0;
+    }
+
+    .employee-summary-table td:not(:first-child):not([style*="display:none"]){
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        border-top:1px solid #f1f5f9;
+    }
+
+    .employee-summary-table td:nth-child(2)::before{ content:"Tổng sản phẩm"; }
+    .employee-summary-table td:nth-child(3)::before{ content:"Đã thanh toán"; }
+    .employee-summary-table td:nth-child(4)::before{ content:"Chưa thanh toán"; }
+    .employee-summary-table td:nth-child(6)::before{ content:"Chi phí xe cuốc"; }
+
+    .employee-summary-table td:nth-child(2)::before,
+    .employee-summary-table td:nth-child(3)::before,
+    .employee-summary-table td:nth-child(4)::before,
+    .employee-summary-table td:nth-child(6)::before{
+        position:static;
+        width:auto;
+        color:#64748b;
+        font-size:.76rem;
+        font-weight:700;
+        white-space:normal;
+    }
+
+    .employee-summary-table td[style*="display:none"]{
+        display:none !important;
+    }
+
+    .employee-summary-table .rent-info{
+        min-width:0;
+        width:100%;
+        padding:10px;
+        font-size:.82rem;
+    }
 }
