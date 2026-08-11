@@ -554,7 +554,6 @@ $deliveryOrders = $pdo->query("
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Quản lý nhân viên & công nợ</title>
 	
@@ -1345,7 +1344,7 @@ document.querySelectorAll(".my-statement tbody tr").forEach(tr=>{
 </button>
 </div>
 </section>
-<table class="debts-table employee-summary-table">
+<table class="debts-table">
 <thead>
 <tr>
     
