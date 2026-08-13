@@ -544,23 +544,26 @@ justify-content:space-between'>
 ";
 ?>
 <style>
-	.money{
+	.debt-table .money{
     font-size:17px;
     font-weight:700;
+    line-height:1.25;
 }
 
-.money.green{
-    color:#32d296;
+.debt-table .money.green{
+    color:#0f9f6e;
 }
 
-.sub{
-    font-size:11px;
-    color:#8b8b8b;
-    margin-top:2px;
+.debt-table .sub{
+    margin-top:4px;
+    color:#475569;
+    font-size:13px;
+    font-weight:600;
+    line-height:1.35;
 }
 
-.muted{
-    color:#666;
+.debt-table .muted{
+    color:#64748b;
     font-size:18px;
 }
 </style>
